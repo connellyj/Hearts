@@ -2,12 +2,10 @@ public class Card {
 
     private String suit;
     private String level;
-    private String[] hierarchy;
 
-    Card(String suit, String level, Deck deck) {
+    Card(String suit, String level) {
         this.suit = suit;
         this.level = level;
-        this.hierarchy = deck.hierarchy();
     }
 
     public String suit() {
@@ -25,7 +23,7 @@ public class Card {
     public boolean greaterThan(Card card) {
         if (this.compareSuit(card)) {
             for (int i = 0; i < 13; i++) {
-                if (hierarchy[i].equals(card.level())) {
+                if (Deck.hierarchy[i].equals(card.level())) {
                     return true;
                 }
             }
@@ -36,7 +34,7 @@ public class Card {
     public boolean lessThan(Card card) {
         if (this.compareSuit(card)) {
             for (int i = 0; i < 13; i++) {
-                if (hierarchy[i].equals(this.level())) {
+                if (Deck.hierarchy[i].equals(this.level())) {
                     return true;
                 }
             }

@@ -1,9 +1,11 @@
+import java.util.ArrayList;
 import java.util.Random;
 
 public class Deck {
 
-    private String[] hierarchy = new String[13];
-    private Card[] deck = new Card[52];
+    public static final String[] hierarchy = new String[13];
+    public static final Card[] deck = new Card[52];
+    public static final ArrayList<String> suits = new ArrayList<>(4);
 
     Deck() {
         for (Integer i = 2; i < 11; i++) {
@@ -14,17 +16,16 @@ public class Deck {
         hierarchy[11] = "King";
         hierarchy[12] = "Ace";
 
-        String[] suits = new String[4];
-        suits[0] = "Clubs";
-        suits[1] = "Diamonds";
-        suits[2] = "Spades";
-        suits[3] = "Hearts";
+        suits.add("Clubs");
+        suits.add("Diamonds");
+        suits.add("Spades");
+        suits.add("Hearts");
 
         int count = 0;
 
         for (String suit : suits) {
             for (String level : hierarchy) {
-                Card card = new Card(suit, level, this);
+                Card card = new Card(suit, level);
                 deck[count] = card;
                 count++;
             }
@@ -32,18 +33,8 @@ public class Deck {
         shuffle();
     }
 
-    public String[] hierarchy() {
-        return hierarchy;
-    }
-
-    public Card[] deck() {
+    public Card[] getDeck() {
         return deck;
-    }
-
-    public void swap(int a, int b) {
-        Card tmp = deck[a];
-        deck[a] = deck[b];
-        deck[b] = tmp;
     }
 
     public void shuffle() {
@@ -51,14 +42,20 @@ public class Deck {
         int rand;
         for (int i = 51; i > 0; i--) {
             rand = random.nextInt(i + 1);
-            swap(i, rand);
+            Card tmp = deck[rand];
+            deck[rand] = deck[i];
+            deck[i] = tmp;
         }
+    }
+
+    public Hand[] deal() {
+
     }
 
     public static void main(String[] args) {
         Deck deck = new Deck();
         for (int i = 0; i < 52; i++) {
-            System.out.println(deck.deck()[i]);
+            System.out.println(deck.getDeck()[i]);
         }
     }
 }
