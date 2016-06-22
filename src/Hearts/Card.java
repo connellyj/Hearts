@@ -1,5 +1,7 @@
 package Hearts;
 
+import javafx.scene.layout.GridPane;
+
 /**
  * Created by Julia Connelly
  * June 2016
@@ -11,6 +13,7 @@ class Card {
 
     private String suit;
     private String rank;
+    private GridPane pane;
 
     /**
      * Constructor that creates a Hearts.Card with a suit and a rank
@@ -20,6 +23,7 @@ class Card {
     Card(String suit, String rank) {
         this.suit = suit;
         this.rank = rank;
+        pane.setPrefSize(40.0, 70.0);
     }
 
     /**
@@ -54,5 +58,9 @@ class Card {
      */
     public String toString() {
         return this.rank + " of " + this.suit;
+    }
+
+    public GridPane pane() {
+        return pane;
     }
 }

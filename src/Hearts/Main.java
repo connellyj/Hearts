@@ -18,13 +18,9 @@ import java.io.IOException;
 public class Main extends Application {
 
     @Override
-    public void start(Stage primaryStage) {
+    public void start(Stage primaryStage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/MainView.fxml"));
-        try {
-            fxmlLoader.load();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        fxmlLoader.load();
 
         Pane root = fxmlLoader.getRoot();
         Scene scene = new Scene(root, 800, 800);

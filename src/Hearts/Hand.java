@@ -1,5 +1,7 @@
 package Hearts;
 
+import javafx.scene.layout.GridPane;
+
 /**
  * Created by Julia Connelly
  * June 2016
@@ -11,6 +13,7 @@ class Hand {
 
     // Hearts.Hand of 13 sorted cards
     private Card[] hand = new Card[13];
+    GridPane[] cardPanes = new GridPane[13];
 
     /**
      * Creates a sorted hand of 13 cards
@@ -28,14 +31,22 @@ class Hand {
             unsortedHand[i + 1] = key;
         }
         hand = unsortedHand;
+
+        for (int k = 0; k < 13; k++) {
+            cardPanes[k] = hand[k].pane();
+        }
     }
 
     /**
      * Get method for hand
      * @return Hearts.Card[]
      */
-    public Card[] getHand() {
+    public Card[] getHandAsArray() {
         return hand;
+    }
+
+    public GridPane[] getHandAsPanes() {
+        return cardPanes;
     }
 
     /**

@@ -1,5 +1,7 @@
 package Hearts;
 
+import javafx.scene.layout.GridPane;
+
 /**
  * Created by Julia Connelly
  * June 2016
@@ -10,6 +12,8 @@ package Hearts;
 
 public class SessionController {
 
+    public GridPane gridPane;
+
     public void initialize() {
         Deck deck = new Deck();
         Hand[] hands = deck.deal();
@@ -17,7 +21,7 @@ public class SessionController {
         Hand AI1 = hands[1];
         Hand AI2 = hands[2];
         Hand AI3 = hands[3];
-        for (Card card : player.getHand()) {
+        for (int i = 0; i < 13; i++) {
 
         }
     }
