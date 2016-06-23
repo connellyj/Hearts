@@ -1,0 +1,10 @@
+._.DS_Store
+
+*/.DS_Store
+
+src/*/.DS_Store
+
+.DS_Store
+*.class
+
+.idea/workspace.xml
