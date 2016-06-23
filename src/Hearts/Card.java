@@ -1,5 +1,7 @@
 package Hearts;
 
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 
 /**
@@ -23,6 +25,7 @@ class Card {
     Card(String suit, String rank) {
         this.suit = suit;
         this.rank = rank;
+        pane = new GridPane();
         pane.setPrefSize(40.0, 70.0);
     }
 
@@ -61,6 +64,22 @@ class Card {
     }
 
     public GridPane pane() {
+        if (suit == "Clubs") {
+
+        }
+        if (suit == "Diamonds") {
+
+        }
+        if (suit == "Spades") {
+
+        }
+        //if (suit == "Hearts") {
+            Image heartIcon = new Image("https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Heart_coraz%C3%B3n.svg/2000px-Heart_coraz%C3%B3n.svg.png");
+            ImageView heart = new ImageView(heartIcon);
+            GridPane.setConstraints(heart, 0, 0);
+            GridPane.setConstraints(heart, 5, 8);
+            pane.getChildren().add(heart);
+        //}
         return pane;
     }
 }
