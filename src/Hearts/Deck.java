@@ -27,10 +27,10 @@ public class Deck {
         for (Integer i = 2; i < 11; i++) {
             hierarchy.add(i.toString());
         }
+        hierarchy.add("Ace");
         hierarchy.add("Jack");
         hierarchy.add("Queen");
         hierarchy.add("King");
-        hierarchy.add("Ace");
 
         // Initializes suits
         suits.add("Clubs");
