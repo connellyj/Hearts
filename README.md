@@ -2,4 +2,4 @@
 Java implementation of the card game Hearts
 with a JavaFX GUI
 
-One player only
+3 AIs plus one human player
