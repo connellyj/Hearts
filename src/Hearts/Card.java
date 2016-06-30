@@ -65,13 +65,13 @@ class Card {
 
     public GridPane pane() {
         if (suit == "Clubs") {
-
+            System.out.println();
         }
         if (suit == "Diamonds") {
-
+            System.out.println();
         }
         if (suit == "Spades") {
-
+            System.out.println();
         }
         //if (suit == "Hearts") {
             Image heartIcon = new Image("https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Heart_coraz%C3%B3n.svg/2000px-Heart_coraz%C3%B3n.svg.png");
