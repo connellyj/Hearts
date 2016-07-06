@@ -23,7 +23,7 @@ public class SessionController {
         Hand AI3 = hands[3];
         GridPane[] cards = player.getHandAsPanes();
         for (int i = 0; i < 13; i++) {
-            GridPane.setConstraints(cards[i], 0, i);
+            GridPane.setConstraints(cards[i], i, 0);
             gridPane.getChildren().add(cards[i]);
         }
     }

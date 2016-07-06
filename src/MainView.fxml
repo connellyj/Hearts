@@ -8,6 +8,8 @@
             xmlns:fx="http://javafx.com/fxml"
             prefHeight="600"
             prefWidth="800">
-    <GridPane  fx:id="gridPane">
+    <GridPane  fx:id="gridPane"
+               prefWidth="1000"
+               prefHeight="1000">
     </GridPane>
 </AnchorPane>
